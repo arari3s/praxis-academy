@@ -1,0 +1,164 @@
+1. Open
+Open membuka file, direktori dan aplikasi. Menyenangkan, bukan? Tapi itu benar-benar berguna sebagai perintah-klik dua kali. Misalnya, mengetik:
+
+$ open /Applications/Safari.app/
+
+... akan meluncurkan Safari seolah-olah Anda telah mengklik dua kali ikonnya di Finder.
+ 
+
+2. pbcopy and pbpaste
+Dua perintah ini memungkinkan Anda menyalin dan menempelkan teks dari baris perintah. Tentu saja, Anda juga bisa menggunakan mouse Anda — tetapi kekuatan sebenarnya dari pbcopy dan pbpaste berasal dari fakta bahwa mereka adalah perintah UNIX, dan itu berarti mereka mendapat manfaat dari pemipaan, pengalihan, dan kemampuan untuk berada dalam skrip bersama dengan perintah lain. Mengetik:
+
+$ ls ~ | pbcopy
+
+... akan menyalin daftar file di direktori home Anda ke clipboard OS X. Anda dapat dengan mudah menangkap konten file:
+
+$ pbcopy < blogpost.txt 
+
+..atau melakukan sesuatu yang lebih gila. Skrip yang diretas ini akan mengambil tautan orat-oret Google terbaru dan menyalinnya ke papan klip Anda.
+
+$ curl http://www.google.com/doodles#oodles/archive | grep -A5 'latest-doodle on' | grep 'img src' | sed s/.*'<img src="\/\/'/''/ | sed s/'" alt=".*'/''/ | pbcopy
+
+Menggunakan pbcopy dengan pipa adalah cara yang bagus untuk menangkap output dari suatu perintah tanpa harus menggulir ke atas dan memilihnya dengan hati-hati. Ini memudahkan berbagi informasi diagnostik. pbcopy dan pbpaste juga dapat digunakan untuk mengotomatisasi atau mempercepat jenis tugas tertentu. Misalnya, jika Anda ingin menyimpan baris subjek email ke daftar tugas, Anda bisa menyalin subjek dari Mail.app dan menjalankan:
+
+$ pbpaste >> tasklist.txt
+
+3. mdfind
+$ mdfind -onlyin ~/Documents essay
+
+Perintah Untuk mencari document
+
+4. screencapture
+Tangkap konten layar, termasuk kursor, dan lampirkan gambar yang dihasilkan (bernama ‘image.png’) ke pesan Mail baru:
+
+$ screencapture -C -M image.png
+
+Pilih jendela menggunakan mouse Anda, lalu ambil kontennya tanpa jendela drop shadow dan salin gambar ke clipboard:
+
+$ screencapture -c -W
+
+Abadikan layar setelah jeda 10 detik dan kemudian buka gambar baru di Pratinjau:
+
+$ screencapture -T 10 -P image.png
+
+Pilih sebagian layar dengan mouse Anda, ambil isinya, dan simpan gambar sebagai pdf:
+
+$ screencapture -s -t pdf image.pdf
+
+Untuk melihat lebih banyak opsi, ketik screencapture --help
+
+5. launchctl
+launchtl memungkinkan kita untuk menjalankan aplikasi secara berkala atau otomatis.
+Misalnya ingin server web apache memulai secara otomatis ketika andamenyalakan mac, Cukup metic:
+
+$ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+Skrip launchd disimpan di lokasi berikut:
+
+~/Library/LaunchAgents    
+/Library/LaunchAgents          
+/Library/LaunchDaemons
+/System/Library/LaunchAgents
+/System/Library/LaunchDaemons
+
+6. Say
+Perintah untuk mengkonversi teks menjadi suara:
+
+$ say "Never trust a computer you can't lift."
+
+Anda juga data menggunakan say untuk berbicara konten file teks dengan flag -f dan dapat menyimpan lip audio dengan flag -o
+
+$ say -f mynovel.txt -o myaudiobook.aiff
+
+Perintah say berguna sebagai pengganti konsll atau suara skrip.
+
+7. diskutil 
+diskutil adalah antarmuka baris perintah ke aplikasi Disk Utility yang datang dengan OS X. Cukup ketik daftar diskutil untuk melihat nama jalur disk dan media yang dapat dilepas yang terpasang pada mesin Anda, dan kemudian arahkan perintah pada volume yang ingin Anda operasikan. Hati-hati: diskutil dapat menghancurkan data secara permanen jika digunakan secara salah.
+
+8. brew 
+ini secara teknis bukan perintah asli. Tetapi tidak ada pengguna daya OS X yang seharusnya tanpa Homebrew. Situs web menyebutnya "Manajer paket yang hilang untuk OS X," dan itu tidak mungkin lebih benar.
+
+
+16 terminal commands
+
+1. Change directory
+commannd : cd
+fungsi : mengubah direktori jalur perintah
+contoh : cd "path/to/directory/" 
+
+2. Listing directory
+Command : ls
+Fungsi : untuk melihat daftar direktori
+Contoh ; ls "path/to/directory/"
+
+3. Open files
+Command : open
+Fungsi : membuka sebuah file
+Contoh : open "filename"
+
+4. Copy
+Command : copy
+Fungsi	: meng-copy atau menyalin file ke direktori lain
+Contoh	: cp "filename" "new filename"
+
+5. Move a file
+Command	: mv
+Fungsi	: memindahkan file ke direktori lain
+Contoh	: mv "filename" "path/to/new/file/location/"
+
+6. Renaming a file
+Command	: mv
+Fungsi	: mengganti nama sebuah file
+Contoh	: mv "path/to/filename" "path/to/newfilename"
+
+7. Create a directory
+Command	: mkdir
+Fungsi	: Membuat directory baru
+Contoh	: mkdir "path/to/new/directory"
+
+8. Remove an empty directory
+Command	: rmdir
+Fungsi	: menghapus directory yang kosong
+Contoh	: rmdir "path/to/directory"
+
+9. Remove nested directories
+Command	: rm- R
+Fungsi	: menghapus directory bersarang
+Contoh	: rm -R "/path/to/root/directory"
+
+10. Menjalankan perintah dengan hak super user
+Command	: sodu
+Contoh	: sudo "command"
+
+11. Perintah untuk melihat list aktif kerja proses komputer
+Command	: top
+Example	: top
+
+12. keluar dari sub-layar dan kembali ke terminal
+Command	: q
+Contoh	: Setelah menjalankan perintah seperti "top" untuk melihat proses atria, maka tekan "q"
+
+13. Membersihkan layar terminal Dari semua perintah sebelumnya
+Command	: clear
+Fungsi	: clear
+
+14. Mendapatkan bantuan Untuk sebuah perintah
+Command	: help
+Contoh	: help "command"
+
+15. Membersihkan layar terminal dari semua perintah sebelumnya
+Command	: whatis
+Contoh	: whatis "command"
+ 
+16. Menampilkan halaman manual untuk suatu perintah
+Command	: man
+Contoh	: man "command"
+
+17. Untuk keluar dari command
+Command	: exit
+Contoh 	: exit
+ 
+
+
+
+
