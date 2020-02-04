@@ -26,5 +26,9 @@ var image = {
 </li>
 </ul>
 </br>
-selain materi dan latihan di bootcame ini kita juga diberi kasus atau projek, pada minggu pertama dan hari pertama ini, kasus pertamanya adalah mengenai instal stagehand.<br>
-apa itu stagehand?? stagehand ini bisa dikatakan bisa membantu kita mengatur proyek dart dan siap untuk digunakan nantinya. 
+selain materi dan latihan di bootcame ini kita juga diberi kasus atau projek, pada minggu pertama dan hari pertama ini, kasus pertamanya adalah mengenai instal stagehand.<br></br>
+apa itu stagehand?? stagehand ini bisa dikatakan bisa membantu kita mengatur proyek dart dan siap untuk digunakan nantinya.</br>
+bagaimana cara menginstalnya?? kita tinggal mengetik pada terminal
+<pre>
+pub global activate stagehand
+</pre>
