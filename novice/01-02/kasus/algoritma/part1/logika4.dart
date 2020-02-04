@@ -1,3 +1,0 @@
-// Backward Insertion Sort
-
-main() {}
