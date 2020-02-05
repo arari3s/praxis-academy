@@ -15,6 +15,4 @@ hari ini kita mempelajari ada banyak materi apa sajakah yang dibahas??</br></br>
 </ol>
 
 <h2>Yang dipelajari</h2>
-<ol>
-<li></li>
-</ol>
+membuat <a href="https://eturo.blogspot.com/2012/01/tutorial-simple-atm-machine-program-in.html">ATM</a> dengan menggunakan Dart.
