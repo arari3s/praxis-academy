@@ -1,5 +1,6 @@
 <h1>Laporan hasil pelatihan bootcame mobile apps minggu pertama hari keempat</h1>
 hari ini kita mempelajari ada banyak materi apa sajakah yang dibahas??</br></br>
+<<<<<<< HEAD
 <ol>
     <li>List</li>
     <li>Sets</li>
@@ -22,3 +23,5 @@ hari ini kita mempelajari ada banyak materi apa sajakah yang dibahas??</br></br>
 </br>
 Selaian materi kita juga dipertemukan dengan latihan latihan dan kasus </br>
 salahsatunya adalah mengubah kode <a href="http://www.java2s.com/Tutorial/Java/0200__Generics/WhatAreGenericsASimpleGenericsExample.htm">java</a> ke Dart 
+=======
+>>>>>>> 319b4dfe055aad1fd4f6b8de36a1a59201f4fb07
