@@ -22,4 +22,8 @@ hari ini kita mempelajari ada banyak materi apa sajakah yang dibahas??</br></br>
 </ol>
 </br>
 Selaian materi kita juga dipertemukan dengan latihan latihan dan kasus </br>
+<<<<<<< HEAD
 salahsatunya adalah mengubah kode <a href="http://www.java2s.com/Tutorial/Java/0200__Generics/WhatAreGenericsASimpleGenericsExample.htm">java</a> ke Dart 
+=======
+salahsatunya adalah mengubah kode <a href="http://www.java2s.com/Tutorial/Java/0200__Generics/WhatAreGenericsASimpleGenericsExample.htm">java</a> ke Dart.
+>>>>>>> 152b8befc7408d4b6b851ed24169bad5978f5f92
