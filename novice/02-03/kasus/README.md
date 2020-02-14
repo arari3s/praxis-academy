@@ -4,9 +4,8 @@ academy.<br>
 Seperti biasa setiap hari akan ada latihan dan kasus yang harus saya selesaikan sebagai bentuk latihan saya untuk
 menjadi developer mobile app yang baik.<br>
 Materi kali ini yang kami pelajari adalah mengenai Assets dan Navigasi<br>
-Apa sajakah yang dipelajari pada materi kali ini??<br>
+Apa sajakah yang dipelajari pada materi kali ini??<br><br>
 <ol>
-
     <li>Memahami assets, baik berupa images maupun bukan images</li>
     <li>Pengelolaan assets</li>
     <li>Ikon aplikasi</li>
@@ -55,12 +54,10 @@ dengan nama <strong>menu.dart</strong> kemudia beri class dengan nama class <str
         @override
         _MenuState createState() => _MenuState();
         }
-        
         class _MenuState extends State&lt;Menu&gt; {
         @override
         Widget build(BuildContext context) {
-            return Container(
-            
+            return Container(   
             );
         }
         }
@@ -71,12 +68,10 @@ Setelah itu kita buat file baru dengan nama <strong>screen.dart</strong> buat cl
         @override
         _SplashScreenState createState() => _SplashScreenState();
     }
-    
     class _SplashScreenState extends State&lt;SplashScreen&gt; {
         @override
         Widget build(BuildContext context) {
-        return Container(
-            
+        return Container(  
         );
         }
     }
@@ -90,7 +85,6 @@ Masih di file screen.dart, kemudian tuliskan script dibawah ini:
             Navigator.pushAndRemoveUntil(context,
                 MaterialPageRoute(builder: (context) => Menu()), (e) => false);
         });
-    
         return Scaffold(
             body: Container(
             child: Center(
@@ -119,7 +113,8 @@ Kita bisa masuk ke file <strong>pubspec.yaml</strong> kemudian tuliskan
 <pre>
     dev_dependencies: 
     flutter_launcher_icons: "^0.7.3"
-
+</pre>
+<pre>
     flutter_icons:
     android: "launcher_icon" 
     ios: true
