@@ -19,25 +19,19 @@ Buka projek batterylevel kemudian ke <kbd>bin/main.dart</kbd>
 <pre>
     <code>
         import 'dart:async';
-
         import 'package:flutter/material.dart';
         import 'package:flutter/services.dart';
-
         void main() => runApp(MaterialApp(
             debugShowCheckedModeBanner: false,
             home: MyHomePage(),
             ));
-
         class MyHomePage extends StatefulWidget {
         @override
         _MyHomePageState createState() => _MyHomePageState();
         }
-
         class _MyHomePageState extends State&lt;MyHomePage&gt; {
         static const platform = const MethodChannel('samples.flutter.dev/battery');
-
         String _batteryLevel = 'Unknown battery level.';
-
         Future&lt;void&gt; _getBatteryLevel() async {
             String batteryLevel;
             try {
@@ -46,12 +40,10 @@ Buka projek batterylevel kemudian ke <kbd>bin/main.dart</kbd>
             } on PlatformException catch (e) {
             batteryLevel = "Failed to get battery level: '${e.message}'.";
             }
-
             setState(() {
             _batteryLevel = batteryLevel;
             });
         }
-
         @override
         Widget build(BuildContext context) {
             return Scaffold(
@@ -100,10 +92,9 @@ di file <kbd>MainActivity.kt</kbd> tuliskan skrip berikut
         import io.flutter.embedding.engine.FlutterEngine
         import io.flutter.plugin.common.MethodChannel
         import io.flutter.plugins.GeneratedPluginRegistrant
-
+        //
         class MainActivity: FlutterActivity() {
             private val CHANNEL = "samples.flutter.dev/battery"
-
         override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
             GeneratedPluginRegistrant.registerWith(flutterEngine)
             MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
@@ -137,7 +128,6 @@ selanjutnya, letakkan skrip berikut di bawah <kbd> configureFlutterEngine() meth
                 val intent = ContextWrapper(applicationContext).registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
                 batteryLevel = intent!!.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100 / intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
             }
-            
             return batteryLevel
             }
     </code>
@@ -157,7 +147,6 @@ dan ganti dengan skrip dibawah ini
             call, result ->
             if (call.method == "getBatteryLevel") {
                 val batteryLevel = getBatteryLevel()
-            
                 if (batteryLevel != -1) {
                 result.success(batteryLevel)
                 } else {
