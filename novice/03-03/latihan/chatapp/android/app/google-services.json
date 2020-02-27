@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "379413641638",
+    "firebase_url": "https://chatapp-7e8df.firebaseio.com",
+    "project_id": "chatapp-7e8df",
+    "storage_bucket": "chatapp-7e8df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379413641638:android:8c8cfa9b795106c0ea3767",
+        "android_client_info": {
+          "package_name": "com.arlan.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379413641638-mrkmjopfp4q3v6p5s83cnhf41plm80v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArDHTVW_FFwTTraaEotjecIx4q9Sb5Oc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379413641638-mrkmjopfp4q3v6p5s83cnhf41plm80v3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
