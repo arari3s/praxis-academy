@@ -91,7 +91,6 @@ Untuk menggunakan package ini:
                 };
             }
             if (!mounted) return;
-        
             setState(() {
                 _deviceData = deviceData;
             });
@@ -164,7 +163,9 @@ Untuk menggunakan package ini:
     <li>Jalankan aplikasi, sekarang akan tampil informasi sistem android kalian</li>
 </ol>
 <img src="img/1.png">
+<br>
 Sumber
+<br>
 <a href="https://stackoverflow.com/questions/45300661/how-to-check-the-device-os-version-from-flutter">stackoverflow</a>
 <br>
 <a href="https://github.com/flutter/plugins/blob/master/packages/device_info/example/lib/main.dart">Github</a>
