@@ -92,7 +92,6 @@ sumber: <br>
 <a href="https://codelabs.developers.google.com/codelabs/basic-android-accessibility/#0">Aksesibilitas Android
     Dasar</a>
 <h2>Developing an Accessibility Service for Android</h2>
-<<<<<<< HEAD
 <h3>Getting set up</h3>
 Anda dapat mengkloning repo yang berisi kode untuk codelab ini:
 <pre>
@@ -174,9 +173,4 @@ sekarang tambahkan metode onServiceStarted():
 </pre>
 Kode ini mengembang tata letak dan menambahkan bilah tindakan ke bagian atas layar.
 <br><br>
-Metode onServiceConnected () berjalan ketika layanan terhubung. Pada saat ini, layanan aksesibilitas memiliki semua
-izin yang diperlukan untuk berfungsi. Izin utama yang akan Anda gunakan di sini adalah izin
-WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY . Izin ini memungkinkan Anda menggambar langsung di layar di
-atas konten yang ada tanpa harus melalui alur izin yang rumit.
-=======
->>>>>>> 24934a477eaaa59dd2aaf5aa9a50119a0a071e68
+Metode onServiceConnected () berjalan ketika layanan terhubung. Pada saat ini, layanan aksesibilitas memiliki semua izin yang diperlukan untuk berfungsi. Izin utama yang akan Anda gunakan di sini adalah izin WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY . Izin ini memungkinkan Anda menggambar langsung di layar di atas konten yang ada tanpa harus melalui alur izin yang rumit.
