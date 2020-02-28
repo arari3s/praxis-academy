@@ -25,9 +25,15 @@ sudut kiri bawah codelab.
 <h3>Download Kode</h3>
 Anda dapat mengkloning repo yang berisi kode utnuk codelab ini:
 <pre>
+<<<<<<< HEAD
 <code>
     ini dalah kodenya nanti
 </code>
+=======
+    <code>
+    git clone https://github.com/googlecodelabs/basic-android-accessibility.git
+    </code>
+>>>>>>> 24934a477eaaa59dd2aaf5aa9a50119a0a071e68
 </pre>
 <h3>Menyiapkan Android Studio</h3>
 <ul>
@@ -86,6 +92,7 @@ sumber: <br>
 <a href="https://codelabs.developers.google.com/codelabs/basic-android-accessibility/#0">Aksesibilitas Android
     Dasar</a>
 <h2>Developing an Accessibility Service for Android</h2>
+<<<<<<< HEAD
 <h3>Getting set up</h3>
 Anda dapat mengkloning repo yang berisi kode untuk codelab ini:
 <pre>
@@ -171,3 +178,5 @@ Metode onServiceConnected () berjalan ketika layanan terhubung. Pada saat ini, l
 izin yang diperlukan untuk berfungsi. Izin utama yang akan Anda gunakan di sini adalah izin
 WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY . Izin ini memungkinkan Anda menggambar langsung di layar di
 atas konten yang ada tanpa harus melalui alur izin yang rumit.
+=======
+>>>>>>> 24934a477eaaa59dd2aaf5aa9a50119a0a071e68
