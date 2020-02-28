@@ -25,9 +25,9 @@ sudut kiri bawah codelab.
 <h3>Download Kode</h3>
 Anda dapat mengkloning repo yang berisi kode utnuk codelab ini:
 <pre>
-    <code>
-        ini dalah kodenya nanti
-    </code>
+<code>
+    ini dalah kodenya nanti
+</code>
 </pre>
 <h3>Menyiapkan Android Studio</h3>
 <ul>
@@ -86,3 +86,88 @@ sumber: <br>
 <a href="https://codelabs.developers.google.com/codelabs/basic-android-accessibility/#0">Aksesibilitas Android
     Dasar</a>
 <h2>Developing an Accessibility Service for Android</h2>
+<h3>Getting set up</h3>
+Anda dapat mengkloning repo yang berisi kode untuk codelab ini:
+<pre>
+    <code>
+    git clone https://github.com/googlecodelabs/basic-android-accessibility.git 
+    </code>
+</pre>
+Repo berisi beberapa proyek android studio.
+<h3>Memahami Kode Awal</h3>
+Setelah membuka proyek anda. Semua kode yang akan anda tulis dalam codelab ini terbatas pada empat file berikut.
+<ol>
+    <li>app / src / main / AndroidManifest.xml</li>
+    <li>app / src / main / res / layout / action_bar.xml</li>
+    <li>app / src / main / res / xml / global_action_bar_service.xml</li>
+    <li>app / src / main / java / com / example / android / globalactionbarservice / GlobalActionBarService.java
+    </li>
+</ol>
+<h3>Membuat Tombol</h3>
+buka action_bar.xml di res/layout. tambahkan markup di dalam LinearLayout yang saat ini kosong:
+<pre>
+    <code>
+        &lt;LinearLayout ...>
+            &lt;Button
+                android:id="@+id/power"
+                android:text="@string/power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            &lt;Button
+                android:id="@+id/volume_up"
+                android:text="@string/volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            &lt;Button
+                android:id="@+id/scroll"
+                android:text="@string/scroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            &lt;Button
+                android:id="@+id/swipe"
+                android:text="@string/swipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        &lt;/LinearLayout> 
+    </code>
+</pre>
+ini menciptakan tombol yang akan ditekan pengguna untuk memicu tindakan pada perangkat. <br><br>
+buka GlobalActionBarService.java dan tambahkan variabel untuk menyimpan tata letak untuk bilah tindakan:
+<pre>
+    <code>
+    public class GlobalActionBarService extends AccessibilityService {
+        FrameLayout mLayout;
+        ...
+    }
+    </code>
+</pre>
+sekarang tambahkan metode onServiceStarted():
+<pre>
+    <code>
+        public class GlobalActionBarService extends AccessibilityService {
+            FrameLayout mLayout;
+            @Override
+            protected void onServiceConnected() {
+                // Create an overlay and display the action bar
+                WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+                mLayout = new FrameLayout(this);
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.type = WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY;
+                lp.format = PixelFormat.TRANSLUCENT;
+                lp.flags |= WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.TOP;
+                LayoutInflater inflater = LayoutInflater.from(this);
+                inflater.inflate(R.layout.action_bar, mLayout);
+                wm.addView(mLayout, lp);
+            }
+            }
+    </code>
+</pre>
+Kode ini mengembang tata letak dan menambahkan bilah tindakan ke bagian atas layar.
+<br><br>
+Metode onServiceConnected () berjalan ketika layanan terhubung. Pada saat ini, layanan aksesibilitas memiliki semua
+izin yang diperlukan untuk berfungsi. Izin utama yang akan Anda gunakan di sini adalah izin
+WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY . Izin ini memungkinkan Anda menggambar langsung di layar di
+atas konten yang ada tanpa harus melalui alur izin yang rumit.
