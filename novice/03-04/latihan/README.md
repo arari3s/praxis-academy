@@ -26,7 +26,7 @@ sudut kiri bawah codelab.
 Anda dapat mengkloning repo yang berisi kode utnuk codelab ini:
 <pre>
     <code>
-        ini dalah kodenya nanti
+        git clone https://github.com/googlecodelabs/basic-android-accessibility.git
     </code>
 </pre>
 <h3>Menyiapkan Android Studio</h3>
