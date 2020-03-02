@@ -3,5 +3,5 @@ Repo ini berisi tentang apa saja yang telah saya lakukan selama mengikuti bootca
 <ol>
 <li>Kemampuan Dasar </li>
 <li>Novice</li>
-<li>Wawasan</li>
+<li>Wawasan </li>
 </ol>
