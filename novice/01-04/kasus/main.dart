@@ -8,7 +8,7 @@ class GenericClass<T> {
   }
 
   void showType() {
-    print('Tipe of T is  ' + ob.runtimeType.toString());
+    print('Tipe of T is ' + ob.runtimeType.toString());
   }
 }
 
