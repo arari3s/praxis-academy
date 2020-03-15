@@ -5,4 +5,3 @@ Repo ini berisi tentang apa saja yang telah saya lakukan selama mengikuti bootca
 <li>Novice</li>
 <li>Wawasan</li>
 </ol>
-// arlan ariandi trislis
